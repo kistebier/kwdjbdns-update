@@ -1,20 +1,20 @@
-Template: kwdjbdns_update/domain
+Template: kwdjbdns-update/domain
 Type: string
 Default: localdomain
 _Description: DNS domain:
- Please enter the DNS domain to manage from kwdjbdns_update.
+ Please enter the DNS domain to manage from kwdjbdns-update.
  This is very important to create the Makefile.
  .
  Else to use output from "hostname -d".
 
-Template: kwdjbdns_update/leasefile
+Template: kwdjbdns-update/leasefile
 Type: string
 Default: /var/lib/dhcp/dhcpd.leases
 _Description: dhcpd.leases file:
  Please enter the path to dhcpd.leases file from your
  isc-dhcp-server.
 
-Template: kwdjbdns_update/tinydns_path
+Template: kwdjbdns-update/tinydns_path
 Type: string
 Default: /etc/tinydns
 _Description: tinydns root directory:
@@ -22,22 +22,22 @@ _Description: tinydns root directory:
  .
  tinydns must before to configured correctly.
 
-Template: kwdjbdns_update/frequenz
+Template: kwdjbdns-update/frequenz
 Type: string
 Default: 30
 _Description: Intervall:
  Please enter the intervall in seconds to check the
  dhcpd.leases file.
 
-Template: kwdjbdns_update/debug
+Template: kwdjbdns-update/debug
 Type: boolean
 Default: false
 _Description: Should debug to on (yes/no)?
  Default is no.
 
-Template: kwdjbdns_update/boot
+Template: kwdjbdns-update/boot
 Type: boolean
 Default: true
-_Description: Should kwdjbdns_update be started when booting?
- If enabled, each time your machine starts, the kwdjbdns_update script
+_Description: Should kwdjbdns-update be started when booting?
+ If enabled, each time your machine starts, the kwdjbdns-update script
  (dhcp-to-tindns) will be started.

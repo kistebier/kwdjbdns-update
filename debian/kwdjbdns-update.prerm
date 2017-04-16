@@ -1,5 +1,5 @@
 #! /bin/sh
-# prerm script for kwdjbdns_update
+# prerm script for kwdjbdns-update
 #
 # see: dh_installdeb(1)
 
@@ -19,17 +19,21 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
-		rm -rf /usr/share/doc/kwdjbdns_update >/dev/null 2>&1
-		if [ -f /var/run/kwdjbdns_update.pid ] ; then
-			/etc/init.d/kwdjbdns_update stop
-			rm -f /var/run/kwdjbdns_update.pid >/dev/null 2>&1
+		rm -rf /usr/share/doc/kwdjbdns-update >/dev/null 2>&1
+		if [ -f /var/run/kwdjbdns-update.pid ] ; then
+			/etc/init.d/kwdjbdns-update stop
+			rm -f /var/run/kwdjbdns-update.pid >/dev/null 2>&1
 		fi
 		# Original Makefile.orig nach Makefile verschieben
-		if grep -q static $MAKEFILE ; then
-			echo ""
-			echo "Move ${MAKEFILE}.orig to $MAKEFILE"
-			echo ""
-			mv ${MAKEFILE}.orig $MAKEFILE &>/dev/null
+		tinydnspath=$(grep '^tinydnspath' /etc/kwdjbdns-update.cf | awk -F ' ' '{print $3}')
+		MAKEFILE=${tinydnspath}/root/Makefile
+		if [ -f $MAKEFILE ] ; then
+			if grep -q static $MAKEFILE ; then
+				echo ""
+				echo "Move ${MAKEFILE}.orig to $MAKEFILE"
+				echo ""
+				mv ${MAKEFILE}.orig $MAKEFILE &>/dev/null
+			fi
 		fi
 		exit 0
         ;;

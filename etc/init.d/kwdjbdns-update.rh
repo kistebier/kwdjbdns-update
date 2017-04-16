@@ -4,15 +4,15 @@
 #
 # Author: Kai Wilke <kiste@netzworkk.de>
 #
-# /etc/init.d/kwdjbdns_update
+# /etc/init.d/kwdjbdns-update
 #
 #   and its symbolic link
 #
-# /usr/sbin/rckwdjbdns_update
+# /usr/sbin/rckwdjbdns-update
 #
 #
 ### BEGIN INIT INFO
-# Provides:          kwdjbdns_update
+# Provides:          kwdjbdns-update
 # Required-Start:    $local_fs $remote_fs
 # Required-Stop:     $local_fs $remote_fs
 # Should-Start:      $syslog
@@ -27,8 +27,8 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin
 RETVAL=0
 
-prog=kwdjbdns_update
-PIDFILE="/var/run/kwdjbdns_update.pid"
+prog=kwdjbdns-update
+PIDFILE="/var/run/kwdjbdns-update.pid"
 
 usage() {
 	echo "Usage: $0 {start|stop|reload|force-reload|restart}"

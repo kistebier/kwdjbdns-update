@@ -4,15 +4,15 @@
 #
 # Author: Kai Wilke <kiste@netzworkk.de>
 #
-# /etc/init.d/kwdjbdns_update
+# /etc/init.d/kwdjbdns-update
 #
 #   and its symbolic link
 #
-# /usr/sbin/rckwdjbdns_update
+# /usr/sbin/rckwdjbdns-update
 #
 #
 ### BEGIN INIT INFO
-# Provides:          kwdjbdns_update
+# Provides:          kwdjbdns-update
 # Required-Start:    $local_fs $remote_fs
 # Required-Stop:     $local_fs $remote_fs
 # Should-Start:      $syslog
@@ -24,10 +24,10 @@
 #                    for tinydns
 ### END INIT INFO
 
-kwdjbdns_update_BIN=/usr/sbin/kwdjbdns_update
-PIDFILE="/var/run/kwdjbdns_update.pid"
+kwdjbdns-update_BIN=/usr/sbin/kwdjbdns-update
+PIDFILE="/var/run/kwdjbdns-update.pid"
 
-test -x $kwdjbdns_update_BIN || exit 5
+test -x $kwdjbdns-update_BIN || exit 5
 
 . /etc/rc.status
 
@@ -52,7 +52,7 @@ rc_reset
 
 case "$1" in
     start)
-		$kwdjbdns_update_BIN &
+		$kwdjbdns-update_BIN &
 		if [ "$?" != 0 ] ; then
 			if [ -f "$PIDFILE" ] ; then
 				kill `cat $PIDFILE`

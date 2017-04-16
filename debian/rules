@@ -10,7 +10,7 @@
 #export DH_COMPAT=5
 
 # Name our packages
-package-kwdjbdns=kwdjbdns_update
+package-kwdjbdns=kwdjbdns-update
 etc_path=/etc
 doc_path=/usr/share/doc
 man_path=/usr/share/man
@@ -53,15 +53,15 @@ install: build
 
 	# Add here commands to install the package into debian/kwtools-*.
 	
-	# kwdjbdns_update
-	cp -a etc/kwdjbdns_update.cf \
+	# kwdjbdns-update
+	cp -a etc/kwdjbdns-update.cf \
 		$(CURDIR)/debian/$(package-kwdjbdns)/$(etc_path)
-	cp -a usr/sbin/kwdjbdns_update \
+	cp -a usr/sbin/kwdjbdns-update \
 		$(CURDIR)/debian/$(package-kwdjbdns)/$(sbin_path)
-	cp -a man/de/man1/kwdjbdns_update.1 $(CURDIR)/debian/$(package-kwdjbdns)$(man_path)/de/man1
-	cp -a man/de/man5/kwdjbdns_update.cf.5 $(CURDIR)/debian/$(package-kwdjbdns)$(man_path)/de/man5
-	cp -a debian/kwdjbdns_update.overrides.lintian \
-		$(CURDIR)/debian/$(package-kwdjbdns)$(lintian_path)/kwdjbdns_update
+	cp -a man/de/man1/kwdjbdns-update.1 $(CURDIR)/debian/$(package-kwdjbdns)$(man_path)/de/man1
+	cp -a man/de/man5/kwdjbdns-update.cf.5 $(CURDIR)/debian/$(package-kwdjbdns)$(man_path)/de/man5
+	cp -a debian/kwdjbdns-update.overrides.lintian \
+		$(CURDIR)/debian/$(package-kwdjbdns)$(lintian_path)/kwdjbdns-update
 
 # We have nothing to do by default.
 
@@ -74,8 +74,8 @@ binary-indep: build install
 	dh_installdebconf
 	dh_installdocs
 	dh_installchangelogs
-	dh_installinit -n --name=kwdjbdns_update
-	dh_systemd_enable --name=kwdjbdns_update
+	dh_installinit -n --name=kwdjbdns-update
+	dh_systemd_enable --name=kwdjbdns-update
 	dh_installman
 	dh_link
 	dh_strip

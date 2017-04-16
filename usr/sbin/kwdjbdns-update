@@ -2,7 +2,7 @@
 #
 ##########################################################################
 #
-# Filename:     kwdjbdns_update
+# Filename:     kwdjbdns-update
 # Description:  Dynamic DNS-DHCP update script
 # Renamed:      March 30, 2010
 # Last Updated: April 16, 2017
@@ -76,7 +76,7 @@ use AppConfig qw(:argcount :expand);
 
 ###########################################################################
 ### Globals - you can change these as needed
-my $conf_file = "/etc/kwdjbdns_update.cf";
+my $conf_file = "/etc/kwdjbdns-update.cf";
 
 ### reads the configuration file & makes a hash of what's in there.
 my %defconfig = (
@@ -131,7 +131,7 @@ my %conf = $config->varlist(".");
 ### in improving this program.
 
 # Make a pid file
-open(PIDF,'>', "/var/run/kwdjbdns_update.pid") or die "$!\n";
+open(PIDF,'>', "/var/run/kwdjbdns-update.pid") or die "$!\n";
 print PIDF "$$\n";
 close(PIDF) or die "$!\n";
 
@@ -158,7 +158,7 @@ while (1) {
 	# clear the old hash
 	undef %db;
 
-	`logger -t kwdjbdns_update info dhcpd.leases changed - updating DNS`;
+	`logger -t kwdjbdns-update info dhcpd.leases changed - updating DNS`;
 	#printf STDERR "dhcpd.leases changed - updating DNS\n";
 	$modtime = $stats[9];
 
@@ -180,7 +180,7 @@ while (1) {
 sub read_static_dns {
     %static = (); ## clear the list
     unless (open(DNSFILE, $conf{static_dnsfile})) {
-			`logger -t kwdjbdns_update error Can't open static DNS file: won't generate dns from dhcp`;
+			`logger -t kwdjbdns-update error Can't open static DNS file: won't generate dns from dhcp`;
             exit 1;
             #print STDERR "Can't open static DNS file: won't generate dns from dhcp\n";
 			#return 0;
@@ -206,7 +206,7 @@ sub update_dns {
 	    # garnicht nötig ist, da die Datei auf jedenfall
 		# erstellt wird, falls sie deklariert ist.
 		############################
-		`logger -t kwdjbdns_update error Can't open dhcp DNS file`;
+		`logger -t kwdjbdns-update error Can't open dhcp DNS file`;
 		#print STDERR "Can't open dhcp DNS file: $!\n";
 		return;
 	}
@@ -226,7 +226,7 @@ sub update_dns {
 sub read_lease_file {
 
   unless (open(LEASEFILE,$conf{lease_file})) {
-	`logger -t kwdjbdns_update error Can't open dhcpd lease file`;
+	`logger -t kwdjbdns-update error Can't open dhcpd lease file`;
 	exit 1;
 	#print STDERR "Can't open dhcpd lease file\n";
 	#return;
@@ -276,7 +276,7 @@ sub read_lease_file {
 	  
           ## if the hostname is defined in the static list, skip it
           if (exists $static{"$hostname.$conf{domain_name}"}) {
-			  `logger -t kwdjbdns_update info Skipping $hostname.$conf{domain_name} dhcp dns entry: static entry with same name exists.`;
+			  `logger -t kwdjbdns-update info Skipping $hostname.$conf{domain_name} dhcp dns entry: static entry with same name exists.`;
 			  #print STDERR "Skipping $hostname.$conf{domain_name} dhcp dns " .
 			  #             "entry: static entry with same name exists\n";
               next;

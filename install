@@ -1,7 +1,7 @@
 #!/bin/zsh
 # Autor: Kai Wilke <kiste@netzworkk.de> 13.04.2010
 #
-# Script: install, installiert die Dateien des Paketes kwdjbdns_update,
+# Script: install, installiert die Dateien des Paketes kwdjbdns-update,
 # ein dhcp-to-tinydns update daemon.
 #
 # Version: 0.0.1
@@ -28,7 +28,7 @@ fi
 #
 # Variablen belegen
 #
-PACKAGE=kwdjbdns_update
+PACKAGE=kwdjbdns-update
 PREFIX=/usr
 ETC_PATH=/etc
 INIT_PATH=/etc/init.d
@@ -83,24 +83,24 @@ fi
 $INSTALL $INSTALL_FILE_OPT ./etc/kdjbdns_update.cf $ETC_PATH
 
 # Perl-script installieren
-$INSTALL $INSTALL_EXEC_OPT ./usr/sbin/kwdjbdns_update $SBIN_PATH
+$INSTALL $INSTALL_EXEC_OPT ./usr/sbin/kwdjbdns-update $SBIN_PATH
 
-# kwdjbdns_update Init Script kopieren
+# kwdjbdns-update Init Script kopieren
 if [ -e /etc/debian_version ] ; then
-	if [ -e ./etc/init.d/kwdjbdns_update.debian ] ; then
-		$INSTALL $INSTALL_EXEC_OPT ./etc/init.d/kwdjbdns_update.debian ${INITD_PATH}/kwdjbdns_update
-		ln -sf /etc/init.d/kwdjbdns_update ${SBIN_PATH}/rckwdjbdns_update
+	if [ -e ./etc/init.d/kwdjbdns-update.debian ] ; then
+		$INSTALL $INSTALL_EXEC_OPT ./etc/init.d/kwdjbdns-update.debian ${INITD_PATH}/kwdjbdns-update
+		ln -sf /etc/init.d/kwdjbdns-update ${SBIN_PATH}/rckwdjbdns-update
 	fi
 elif [ -e /etc/SuSE-release ] ; then
-	if [ -e ./etc/init.d/kwdjbdns_update.suse ] ; then
-		$INSTALL $INSTALL_EXEC_OPT ./etc/init.d/kwdjbdns_update.suse ${INITD_PATH}/kwdjbdns_update
-		ln -sf /etc/init.d/kwdjbdns_update ${SBIN_PATH}/rckwdjbdns_update
+	if [ -e ./etc/init.d/kwdjbdns-update.suse ] ; then
+		$INSTALL $INSTALL_EXEC_OPT ./etc/init.d/kwdjbdns-update.suse ${INITD_PATH}/kwdjbdns-update
+		ln -sf /etc/init.d/kwdjbdns-update ${SBIN_PATH}/rckwdjbdns-update
 	fi
 else 
 	# Rest ist RedHat basiert (CentOS und Fedora)
-	if [ -e ./etc/init.d/kwdjbdns_update.rh ] ; then
-		$INSTALL $INSTALL_EXEC_OPT ./etc/init.d/kwdjbdns_update.rh ${INITD_PATH}/kwdjbdns_update
-		ln -sf /etc/init.d/kwdjbdns_update ${SBIN_PATH}/rckwdjbdns_update
+	if [ -e ./etc/init.d/kwdjbdns-update.rh ] ; then
+		$INSTALL $INSTALL_EXEC_OPT ./etc/init.d/kwdjbdns-update.rh ${INITD_PATH}/kwdjbdns-update
+		ln -sf /etc/init.d/kwdjbdns-update ${SBIN_PATH}/rckwdjbdns-update
 	fi
 fi
 

@@ -4,10 +4,10 @@
 #
 # Author: Kai Wilke <kiste@netzworkk.de>
 #
-# /etc/init.d/kwdjbdns_update
+# /etc/init.d/kwdjbdns-update
 #
 ### BEGIN INIT INFO
-# Provides:          kwdjbdns_update
+# Provides:          kwdjbdns-update
 # Required-Start:    $local_fs $remote_fs
 # Required-Stop:     $local_fs $remote_fs
 # Should-Start:      $syslog
@@ -22,8 +22,8 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin
 
 DESC="DHCP update daemon for DNS (tinydns)"
-DAEMON="/usr/sbin/kwdjbdns_update"
-PIDFILE="/var/run/kwdjbdns_update.pid"
+DAEMON="/usr/sbin/kwdjbdns-update"
+PIDFILE="/var/run/kwdjbdns-update.pid"
 
 # lsb-base >=3.0-6
 . /lib/lsb/init-functions
