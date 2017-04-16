@@ -12,7 +12,8 @@ KillMode=process
 GuessMainPID=no
 RemainAfterExit=yes
 ExecStart=-/usr/sbin/kwdjbdns-update &
-ExecStop=-/bin/kill `cat /var/run/kwdjbdns-update.pid`
+ExecStop=-/bin/kill `cat /var/run/kwdjbdns-update.pid` \; \
+/bin/rm -f /var/run/kwdjbdns-update.pid
 
 [Install]
 WantedBy=multi-user.target

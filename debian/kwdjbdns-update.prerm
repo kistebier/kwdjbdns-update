@@ -5,6 +5,7 @@
 
 set -e
 
+umask 022
 # summary of how this script can be called:
 #        * <prerm> `remove'
 #        * <old-prerm> `upgrade' <new-version>
@@ -25,16 +26,20 @@ case "$1" in
 			rm -f /var/run/kwdjbdns-update.pid >/dev/null 2>&1
 		fi
 		# Original Makefile.orig nach Makefile verschieben
-		tinydnspath=$(grep '^tinydnspath' /etc/kwdjbdns-update.cf | awk -F ' ' '{print $3}')
+		domain="`grep '^domain' /etc/kwdjbdns-update.cf | awk -F ' ' '{print $3}'`"
+		tinydnspath="`grep '^tinydnspath' /etc/kwdjbdns-update.cf | awk -F ' ' '{print $3}'`"
 		MAKEFILE=${tinydnspath}/root/Makefile
 		if [ -f $MAKEFILE ] ; then
-			if grep -q static $MAKEFILE ; then
+			if grep -q '.cdb: data' $MAKEFILE ; then
 				echo ""
 				echo "Move ${MAKEFILE}.orig to $MAKEFILE"
 				echo ""
 				mv ${MAKEFILE}.orig $MAKEFILE &>/dev/null
 			fi
 		fi
+		rm -f ${tinydnspath}/root/static.${domain} &>/dev/null
+		rm -f ${tinydnspath}/root/dhcp.${domain} &>/dev/null
+		rm -f ${tinydnspath}/root/db.${domain} &>/dev/null
 		exit 0
         ;;
     failed-upgrade)
