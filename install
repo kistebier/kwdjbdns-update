@@ -1,7 +1,7 @@
 #!/bin/zsh
 # Autor: Kai Wilke <kiste@netzworkk.de> 13.04.2010
 #
-# Script: install, installiert die Dateien des Paketes kwdjbdns-update,
+# Script: install, installiert die Dateien des Paketes kwdjbdns_update,
 # ein dhcp-to-tinydns update daemon.
 #
 # Version: 0.0.1
@@ -28,7 +28,7 @@ fi
 #
 # Variablen belegen
 #
-PACKAGE=kwdjbdns-update
+PACKAGE=kwdjbdns_update
 PREFIX=/usr
 ETC_PATH=/etc
 INIT_PATH=/etc/init.d

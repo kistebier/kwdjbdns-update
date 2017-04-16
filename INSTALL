@@ -8,7 +8,7 @@
 
 1. Allgemein
 ---------------------------------------------------------------------------
-   Das Paket kwdjbdns-update unterliegt der GPL Lizenz, siehe copyright
+   Das Paket kwdjbdns_update unterliegt der GPL Lizenz, siehe copyright
    Datei.
 
 2. Was wird vor der Installation benötigt.
@@ -38,22 +38,22 @@
 ---------------------------------------------------------------------------
    Es gibt DEB Pakete.
    stable:
-   URL: ftp://ftp.berlios.de/pub/netzworkk/scripts/kwdjbdns-update/Debian/stable
-   URL: ftp://msx.mamemu.de/pub/kwdjbdns-update/Debian/stable
+   URL: ftp://ftp.berlios.de/pub/netzworkk/scripts/kwdjbdns_update/Debian/stable
+   URL: ftp://msx.mamemu.de/pub/kwdjbdns_update/Debian/stable
 
    DEB Pakete kann man sich installieren mit einem Eintrag in 
    /etc/apt/sources.list.
-   deb ftp://ftp.berlios.de/pub/netzworkk/scripts/kwdjbdns-update/Debian/stable ./
-   deb-src ftp://ftp.berlios.de/pub/netzworkk/scripts/kwdjbdns-update/Debian/stable ./
+   deb ftp://ftp.berlios.de/pub/netzworkk/scripts/kwdjbdns_update/Debian/stable ./
+   deb-src ftp://ftp.berlios.de/pub/netzworkk/scripts/kwdjbdns_update/Debian/stable ./
    oder
-   deb ftp://msx.mamemu.de/pub/kwdjbdns-update/Debian/stable ./
-   deb-src ftp://msx.mamemu.de/pub/kwdjbdns-update/Debian/stable ./
+   deb ftp://msx.mamemu.de/pub/kwdjbdns_update/Debian/stable ./
+   deb-src ftp://msx.mamemu.de/pub/kwdjbdns_update/Debian/stable ./
 
 
 5. Deinstallation
 ---------------------------------------------------------------------------
    Fuehren Sie einfach das Script "uninstall" aus, welches den
    Sourcen beiliegt. Wenn Sie die Sourcen benutzen, deinstallieren Sie immer
-   zuerst mit dem alten "uninstall" Script die kwdjbdns-update Dateien.
+   zuerst mit dem alten "uninstall" Script die kwdjbdns_update Dateien.
    Manches aendert sich einfach zu schnell.
 

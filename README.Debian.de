@@ -13,7 +13,7 @@ vorhanden, wenn Sie die Sourcen benutzen.
 
 2. Notizen
 -----------------------------------------------------------------------
-kwdjbdns-update: ein DHCP-TO-TINYDNS daemon.
+kwdjbdns_update: ein DHCP-TO-TINYDNS daemon.
 
 3. Pakete
 -----------------------------------------------------------------------
@@ -26,6 +26,6 @@ deb-src http://www.netzworkk.org/debian-kwtools stretch main
 4. Dokumentation
 -----------------------------------------------------------------------
 Die Dokumentation kann man unter folgender Adresse finden:
-http://www.netzworkk.org/doku/kwdjbdns-update/index.html
+http://www.netzworkk.org/doku/kwdjbdns_update/index.html
 
- -- Kai Wilke <kiste@netzworkk.de>, Fri, 07 October 2016 07:49:27 +0100
+ -- Kai Wilke <kiste@netzworkk.de>, Sun, 16 April 2017 15:05:27 +0100

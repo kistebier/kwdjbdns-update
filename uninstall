@@ -2,7 +2,7 @@
 # Autor: Kai Wilke <kiste@netzworkk.de> 13.04.2010
 #
 # Script: uninstall, deinstalliert alle Dateien vom Paket
-#         kwdjbdns-update
+#         kwdjbdns_update
 #
 # Version: 0.0.1
 #
@@ -31,13 +31,13 @@ rm -f ${SBIN_DIR}/kwdjbdns_update &>/dev/null
 rm -f ${SBIN_DIR}/rckwdjbdns_update &>/dev/null
 
 # Doc Dateien loeschen
-rm -f /usr/share/doc/kwdjbdns-update &>/dev/null
+rm -f /usr/share/doc/kwdjbdns_update &>/dev/null
 
 # Manpages Dateien loeschen
 rm -f /usr/share/man/de/man1/kwdjbdns_update &>/dev/null
 rm -f /usr/share/man/de/man5/kwdjbdns_update.cf &>/dev/null
 
 # lintian Datei loeschen
-rm -f /usr/share/lintian/overrides/kwdjbdns-update* &>/dev/null
+rm -f /usr/share/lintian/overrides/kwdjbdns_update* &>/dev/null
 
 exit 0
