@@ -18,13 +18,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../kwdjbdns-update.templates:1001
+#: ../kwdjbdns_update.templates:1001
 msgid "DNS domain:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../kwdjbdns-update.templates:1001
+#: ../kwdjbdns_update.templates:1001
 msgid ""
 "Please enter the DNS domain to manage from kwdjbdns_update. This is very "
 "important to create the Makefile."
@@ -32,73 +32,73 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../kwdjbdns-update.templates:1001
+#: ../kwdjbdns_update.templates:1001
 msgid "Else to use output from \"hostname -d\"."
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../kwdjbdns-update.templates:2001
+#: ../kwdjbdns_update.templates:2001
 msgid "dhcpd.leases file:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../kwdjbdns-update.templates:2001
+#: ../kwdjbdns_update.templates:2001
 msgid "Please enter the path to dhcpd.leases file from your dhcp3-server."
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../kwdjbdns-update.templates:3001
+#: ../kwdjbdns_update.templates:3001
 msgid "tinydns root directory:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../kwdjbdns-update.templates:3001
+#: ../kwdjbdns_update.templates:3001
 msgid "Please enter the path to tinydns root directory."
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../kwdjbdns-update.templates:3001
+#: ../kwdjbdns_update.templates:3001
 msgid "tinydns must before to configured correctly."
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../kwdjbdns-update.templates:4001
+#: ../kwdjbdns_update.templates:4001
 msgid "Intervall:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../kwdjbdns-update.templates:4001
+#: ../kwdjbdns_update.templates:4001
 msgid "Please enter the intervall in seconds to check the dhcpd.leases file."
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../kwdjbdns-update.templates:5001
+#: ../kwdjbdns_update.templates:5001
 msgid "Should debug to on (yes/no)?"
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../kwdjbdns-update.templates:5001
+#: ../kwdjbdns_update.templates:5001
 msgid "Default is no."
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../kwdjbdns-update.templates:6001
+#: ../kwdjbdns_update.templates:6001
 msgid "Should kwdjbdns_update be started when booting?"
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../kwdjbdns-update.templates:6001
+#: ../kwdjbdns_update.templates:6001
 msgid ""
 "If enabled, each time your machine starts, the kwdjbdns_update script (dhcp-"
 "to-tindns) will be started."

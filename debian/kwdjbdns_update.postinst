@@ -1,5 +1,5 @@
 #! /bin/sh
-# postinst script for kwdjbdns-update
+# postinst script for kwdjbdns_update
 #
 # see: dh_installdeb(1)
 
@@ -59,33 +59,33 @@ case "$1" in
 			done
 		fi
 
-		db_get kwdjbdns-update/domain $DOMAINNAME || RET="false"
+		db_get kwdjbdns_update/domain $DOMAINNAME || RET="false"
 		if [ "$RET" != "false" ] ; then
 			domain_name="$RET"
 		else
 			domain_name="`hostname -d`"
 		fi
 
-		db_get kwdjbdns-update/leasefile $DHCPDLEASEFILE || RET="false"
+		db_get kwdjbdns_update/leasefile $DHCPDLEASEFILE || RET="false"
 		if [ "$RET" != "false" ] ; then
 			lease_file="$RET"
 		fi
 
-		db_get kwdjbdns-update/tinydns_path $TINYDNS_PATH || RET="false"
+		db_get kwdjbdns_update/tinydns_path $TINYDNS_PATH || RET="false"
 		if [ "$RET" != "false" ] ; then
 			if [ -d "$RET/root" ] ; then
 				tinydnspath="$RET"
 			fi
 		fi
 
-		db_get kwdjbdns-update/frequenz $FREQ || RET="false"
+		db_get kwdjbdns_update/frequenz $FREQ || RET="false"
 		if [ "$RET" != "false" ] ; then
 			update_freq=$RET
 		else
 			update_freq=30
 		fi
 
-		db_get kwdjbdns-update/debug || RET="false"
+		db_get kwdjbdns_update/debug || RET="false"
 		if [ "$RET" != "false" ] ; then
 			debug=2
 		else
@@ -130,7 +130,7 @@ EOF
 			echo ""
 			echo "Warning: tinydns not correct configured or not found."
 			echo "         Please to correct this and to execute"
-			echo "         dpkg-reconfigure kwdjbdns-update."
+			echo "         dpkg-reconfigure kwdjbdns_update."
 			echo ""
 		}
 
@@ -147,16 +147,17 @@ EOF
 					echo ""
 					cp -a $DATA_CDB $STATIC_DNS_FILE &>/dev/null
 				fi
+				# Original Makefile nach Makefile.orig verschieben
+				if ! grep -q static $MAKEFILE ; then
+					echo ""
+					echo "Move $MAKEFILE to ${MAKEFILE}.orig"
+					echo ""
+					mv $MAKEFILE ${MAKEFILE}.orig &>/dev/null
+				fi
 			else
 				no_conf_tinydns
 			fi
-			# Original Makefile nach Makefile.orig verschieben
-			if grep -q 'data.cdb: data' $MAKEFILE ; then
-				echo ""
-				echo "Move $MAKEFILE to ${MAKEFILE}.orig"
-				echo ""
-				mv $MAKEFILE ${MAKEFILE}.orig &>/dev/null
-			fi
+		if [ -f ${MAKEFILE}.orig ] ; then
 		
 			cat > $MAKEFILE << EOF
 .cdb: data
@@ -177,7 +178,7 @@ EOF
 		fi
 
 		if [ $RETURN = 0 ] ; then
-			db_get kwdjbdns-update/boot || RET="false"
+			db_get kwdjbdns_update/boot || RET="false"
 			if [ "$RET" = "true" ] ; then
 				# Runlevel Symlinks erstellen
 				update-rc.d kwdjbdns_update defaults 40 40 >/dev/null

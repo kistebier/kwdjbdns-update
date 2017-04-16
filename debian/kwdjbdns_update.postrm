@@ -22,7 +22,7 @@ if [ "$1" = "purge" ] && test -r /usr/share/debconf/confmodule; then
       db_purge
 fi
 
-update-rc.d -f kwdjbdns_update remove >/dev/null || exit $?
+update-rc.d -f kwdjbdns-update remove >/dev/null || exit $?
 
 #DEBHELPER#
 

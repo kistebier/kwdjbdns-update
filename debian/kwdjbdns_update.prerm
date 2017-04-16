@@ -1,5 +1,5 @@
 #! /bin/sh
-# prerm script for kwdjbdns-update
+# prerm script for kwdjbdns_update
 #
 # see: dh_installdeb(1)
 
@@ -19,10 +19,17 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
-		rm -rf /usr/share/doc/kwdjbdns-update >/dev/null 2>&1
+		rm -rf /usr/share/doc/kwdjbdns_update >/dev/null 2>&1
 		if [ -f /var/run/kwdjbdns_update.pid ] ; then
 			/etc/init.d/kwdjbdns_update stop
 			rm -f /var/run/kwdjbdns_update.pid >/dev/null 2>&1
+		fi
+		# Original Makefile.orig nach Makefile verschieben
+		if grep -q static $MAKEFILE ; then
+			echo ""
+			echo "Move ${MAKEFILE}.orig to $MAKEFILE"
+			echo ""
+			mv ${MAKEFILE}.orig $MAKEFILE &>/dev/null
 		fi
 		exit 0
         ;;

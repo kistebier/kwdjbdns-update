@@ -1,4 +1,4 @@
-Source: kwdjbdns-update
+Source: kwdjbdns_update
 Section: net
 Priority: optional
 Maintainer: Kai Wilke <kiste@netzworkk.de>
@@ -6,7 +6,7 @@ Homepage: http://www.netzworkk.org
 Build-Depends: debhelper (>= 10), gettext-base (>= 0.19.2~), po-debconf (>= 1.0.12)
 Standards-Version: 3.9.8
 
-Package: kwdjbdns-update
+Package: kwdjbdns_update
 Section: net
 Architecture: all
 Priority: optional

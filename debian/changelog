@@ -1,3 +1,14 @@
+kwdjbdns-update (0.1.3-1) unstable; urgency=low
+  * Change from dhcp3 to isc-dhcp-server.
+  * Add support for systemd.
+
+ -- Kai Wilke <kiste@netzworkk.de>  Sun, 16 Apr 2017 10:00:54 +0100
+
+kwdjbdns-update (0.1.2-1) unstable; urgency=low
+  * Update the README files.
+
+ -- Kai Wilke <kiste@netzworkk.de>  Wed, 05 Oct 2016 15:11:37 +0100
+
 kwdjbdns-update (0.1.1-1) unstable; urgency=low
   * Add support for dbndns package.
 
