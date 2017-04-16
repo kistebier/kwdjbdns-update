@@ -1,0 +1,31 @@
+kwtools-vimskel for Linux
+-----------------
+
+1. Installation
+2. Notizen
+3. Pakete
+4. Dokumentation
+
+1. Installation
+-----------------------------------------------------------------------
+Ausführliche Beschreibung steht in der Datei INSTALL. Diese ist nur
+vorhanden, wenn Sie die Sourcen benutzen.
+
+2. Notizen
+-----------------------------------------------------------------------
+kwdjbdns-update: ein DHCP-TO-TINYDNS daemon.
+
+3. Pakete
+-----------------------------------------------------------------------
+Es sind folgende Debian Pakete vorhanden und liegen unter,
+(/etc/apt/sources.list): 
+deb http://www.netzworkk.org/debian-kwtools stretch main
+deb-src http://www.netzworkk.org/debian-kwtools stretch main
+
+
+4. Dokumentation
+-----------------------------------------------------------------------
+Die Dokumentation kann man unter folgender Adresse finden:
+http://www.netzworkk.org/doku/kwdjbdns-update/index.html
+
+ -- Kai Wilke <kiste@netzworkk.de>, Fri, 07 October 2016 07:49:27 +0100

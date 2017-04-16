@@ -1,0 +1,10 @@
+kwdjbdns-update (0.1.1-1) unstable; urgency=low
+  * Add support for dbndns package.
+
+ -- Kai Wilke <kiste@netzworkk.de>  Wed, 05 Oct 2016 15:11:37 +0100
+
+kwdjbdns-update (0.1.0-1) unstable; urgency=low
+  * use AppConfig to read config file and options.
+  * Syslog is on (tail -f /var/log/syslog).
+
+ -- Kai Wilke <kiste@netzworkk.de>  Tue, 13 Apr 2010 15:11:37 +0100
